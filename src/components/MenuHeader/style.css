@@ -23,7 +23,7 @@
     font-size: 14 px;
 }
 .menuHeader > ul > li > span:hover{
-    color: #2873f0;
+    color: #03adfc;
 }
 .menuHeader > ul > li > ul{
     position: absolute;
@@ -32,6 +32,7 @@
     right: 0;
     display: none;
     border: 1px solid #cecece;
+    z-index: 1;
 }
 .menuHeader > ul >li:hover ul{
     display: block;

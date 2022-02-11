@@ -16,13 +16,19 @@ const MenuHeader=(props)=> {
 
   const renderCategories = (categories) => {
     let myCategories = [];
+    console.log('cat>>',category);
     for (let category of categories) {
       myCategories.push(
         <li key={category.name}>
-          {
-            category.parentId ? <a href={category.slug}>{category.name}</a> :
+          {category.parentId ? (
+            <a
+              href={`/${category.slug}?cid=${category._id}&type=${category.type}`}
+            >
+              {category.name}
+            </a>
+          ) : (
             <span>{category.name}</span>
-          }
+          )}
           {category.children.length > 0 ? (
             <ul>{renderCategories(category.children)}</ul>
           ) : null}
@@ -36,7 +42,7 @@ const MenuHeader=(props)=> {
 
 
   return (
-    <div className="menuHeader">
+    <div className="menuHeader ,upArrow">
       <ul>
         {category.categories.length > 0 ? renderCategories(category.categories) : null}
       </ul>
