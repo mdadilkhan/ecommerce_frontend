@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { api } from '../urlConfig';
+import store from '../store';
 
 const token=window.localStorage.getItem('token');
 
@@ -11,5 +12,13 @@ const axiosInstace=axios.create({
         'authorization': token ? `Bearer ${token}` : ''
     }
 });
+
+axiosInstace.interceptors.request.use((req)=>{
+    const { auth } =store.getState();
+    if(auth.token){
+        req.headers.authorization = `Bearer ${auth.token}`;
+    }
+   return req
+})
 
 export default axiosInstace;
