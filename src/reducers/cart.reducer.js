@@ -1,35 +1,4 @@
-// import { cartConstants } from "../actions/constants";
 
-// const initState = {
-//     cartItems: {
-//         // 123: {
-//         //     _id: 123,
-//         //     name: 'Samsung mobile',
-//         //     img: 'some.jpg',
-//         //     price: 200,
-//         //     qty: 1,
-//         // }
-//     },
-//     // updatingCart: false,
-//     // error: null
-// };
-
-// const initial = (state = initState,action) => {
-//    console.log("action>>",action);
-//     switch(action.type){
-//         case cartConstants.ADD_TO_CART:
-//             state = {
-//                 ...state,
-//                 cartItems: action.payload.cartItems
-//             }
-//             break;
-
-//             default:
-//     }
-//     return state;
-// }
-
-// export default initial;
 
 
 import { cartConstants } from "../actions/constants";
